@@ -8,7 +8,7 @@ import Playlist from './components/playlist';
 const Home: React.FC = () => {
 
   return (
-    <div>
+    <div className='pb-96'>
       <Hero />
       <Playlist />
     </div>

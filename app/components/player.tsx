@@ -39,7 +39,7 @@ const Player: React.FC = () => {
     };
 
     return (
-        <div className="fixed bottom-0 left-0 w-full bg-gray-800 text-white flex justify-center items-center py-4 px-6 shadow-lg z-50">
+        <div className="fixed bottom-0 left-0 w-full bg-gradient-to-r from-black to-purple-700 text-white flex justify-center items-center py-4 px-6 shadow-lg z-50">
             {tracks.length > 0 && (
                 <>
                     <div className="flex items-center space-x-4">

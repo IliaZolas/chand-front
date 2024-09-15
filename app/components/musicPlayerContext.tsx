@@ -33,9 +33,13 @@ export const useMusicPlayer = () => {
 export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     // Define the tracks inside the context
     const [tracks] = useState<Track[]>([
-        { title: 'Song 1', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' },
-        { title: 'Song 2', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3' },
-        { title: 'Song 3', url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3' }
+        { title: 'Heal Me', url: '/audio/LANDR-01-Chan-Heal-Me-Open-High.mp3' },
+        { title: 'Get Me Out', url: '/audio/LANDR-02-Chan-get-me-out-Open-High.mp3' },
+        { title: 'Untouchable Blood', url: '/audio/LANDR-03-Chan-Untouchable-Blood-Open-High.mp3' },
+        { title: 'The Ghost I have Become', url: '/audio/LANDR-04-Chan-Dont-want-you-to-die-Balanced-Medium.mp3' },
+        { title: 'Second Wave', url: '/audio/LANDR-06-Chan-Second-Wave-Open-High.mp3' },
+        { title: 'The End of Time', url: '/audio/LANDR-07-Chan-End-of-time-Open-High.mp3' },
+        { title: 'The Neighbours', url: '/audio/LANDR-08-Chan-The-neighbours-Open-Medium.mp3' },
     ]);
 
     const [currentTrackIndex, setCurrentTrackIndex] = useState<number>(0);

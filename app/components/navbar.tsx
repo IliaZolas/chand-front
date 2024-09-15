@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-blue-500 text-white w-full fixed top-0 left-0 z-50 shadow-md">
+    <nav className="bg-gradient-to-r from-black to-purple-700 text-white w-full fixed top-0 left-0 z-50 shadow-md">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
         <div className="text-2xl font-bold">
           CHANDIGARH
