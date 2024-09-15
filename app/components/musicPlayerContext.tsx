@@ -16,6 +16,7 @@ interface MusicPlayerContextProps {
     nextTrack: () => void;
     previousTrack: () => void;
     setProgress: (time: number) => void;
+    setCurrentTrackIndex: (index: number) => void;
     tracks: Track[];
 }
 
@@ -113,6 +114,7 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
                 nextTrack,
                 previousTrack,
                 setProgress: updateProgress,
+                setCurrentTrackIndex,
                 tracks,
             }}
         >
