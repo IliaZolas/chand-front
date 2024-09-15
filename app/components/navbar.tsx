@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
 
       {/* Full-width side cart for mobile menu */}
       <div
-        className={`fixed inset-0 bg-blue-500 text-white z-40 transform ${
+        className={`fixed inset-0 bg-gradient-to-r from-black to-purple-700 text-white z-40 transform ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
         } transition-transform duration-300 ease-in-out md:hidden`}
       >
