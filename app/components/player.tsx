@@ -1,5 +1,6 @@
 import React from 'react';
 import { useMusicPlayer } from './musicPlayerContext';
+import { FiPlay, FiPause, FiSkipForward, FiSkipBack } from 'react-icons/fi';
 
 const Player: React.FC = () => {
     const {
@@ -42,9 +43,15 @@ const Player: React.FC = () => {
             {tracks.length > 0 && (
                 <>
                     <div className="flex items-center space-x-4">
-                        <button onClick={previousTrack}>Previous</button>
-                        <button onClick={togglePlay}>{isPlaying ? 'Pause' : 'Play'}</button>
-                        <button onClick={nextTrack}>Next</button>
+                        <button onClick={previousTrack} aria-label="Previous">
+                            <FiSkipBack size={24} />
+                        </button>
+                        <button onClick={togglePlay} aria-label={isPlaying ? 'Pause' : 'Play'}>
+                            {isPlaying ? <FiPause size={24} /> : <FiPlay size={24} />}
+                        </button>
+                        <button onClick={nextTrack} aria-label="Next">
+                            <FiSkipForward size={24} />
+                        </button>
                     </div>
                     <div className="flex-grow mx-4">
                         <div className="text-center">{tracks[currentTrackIndex]?.title}</div>

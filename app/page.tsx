@@ -9,7 +9,6 @@ const Home: React.FC = () => {
   return (
     <div>
       <Hero />
-      {/* Rest of your page content */}
     </div>
   );
 };
