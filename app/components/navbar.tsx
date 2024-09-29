@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { FiMenu, FiX } from 'react-icons/fi';
+import Image from 'next/image';
+import Logo from '../../public/images/logo/Logo.png'
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,8 +14,8 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-gradient-to-r from-black to-purple-700 text-white w-full fixed top-0 left-0 z-50 shadow-md">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        <div className="text-2xl font-bold">
-          CHANDIGARH
+        <div className="">
+          <Image src={Logo} alt="Logo" layout="responsive" width={100} height={100} />
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu}>
