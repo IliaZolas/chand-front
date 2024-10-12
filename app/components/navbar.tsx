@@ -14,16 +14,15 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar text-white w-full fixed top-0 left-0 z-50">
-      <div className="container mx-auto flex justify-between py-4 px-6">
-        <div className="">
-          <Image src={LogoSVG} alt="Logo" layout="responsive" width={100} height={100} />
+      <div className="container mx-auto flex justify-between py-4 px-6 items-center">
+        <div className="logo-container">
+          <Image src={LogoSVG} alt="Logo" layout="responsive" />
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu}>
             {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
-        
           <ul className="hidden md:flex space-x-8">
             <li className="hover:text-gray-300 cursor-pointer">
               <Link href="/">Home</Link>
@@ -35,7 +34,6 @@ const Navbar: React.FC = () => {
               <Link href="/contact">Contact</Link>
             </li>
           </ul>
-        
       </div>
 
       {/* Full-width side cart for mobile menu */}

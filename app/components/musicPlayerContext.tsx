@@ -1,4 +1,3 @@
-import { NextMiddleware } from 'next/server';
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
 
 interface Track {
@@ -31,7 +30,6 @@ export const useMusicPlayer = () => {
 };
 
 export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    // Define the tracks inside the context
     const [tracks] = useState<Track[]>([
         { title: 'Heal Me', url: '/audio/LANDR-01-Chan-Heal-Me-Open-High.mp3' },
         { title: 'Get Me Out', url: '/audio/LANDR-02-Chan-get-me-out-Open-High.mp3' },
@@ -47,7 +45,6 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
     const [progress, setProgress] = useState<number>(0);
     const [duration, setDuration] = useState<number>(0);
     const audioRef = useRef<HTMLAudioElement | null>(null);
-
 
     useEffect(() => {
         if (audioRef.current) {
@@ -65,6 +62,7 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
         }
     }, [currentTrackIndex]);
 
+    // Effect to handle track changes
     useEffect(() => {
         if (audioRef.current && tracks.length > 0) {
             audioRef.current.src = tracks[currentTrackIndex].url;
@@ -73,20 +71,25 @@ export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ c
                 audioRef.current.play();
             }
         }
-    }, [currentTrackIndex, tracks, isPlaying]);
+    }, [currentTrackIndex, tracks]);
+
+    // Effect to handle play/pause without resetting the track
+    useEffect(() => {
+        if (audioRef.current) {
+            if (isPlaying) {
+                audioRef.current.play();
+            } else {
+                audioRef.current.pause();
+            }
+        }
+    }, [isPlaying]);
 
     const playTrack = () => {
-        if (audioRef.current) {
-            audioRef.current.play();
-            setIsPlaying(true);
-        }
+        setIsPlaying(true);
     };
 
     const pauseTrack = () => {
-        if (audioRef.current) {
-            audioRef.current.pause();
-            setIsPlaying(false);
-        }
+        setIsPlaying(false);
     };
 
     const nextTrack = () => {

@@ -22,10 +22,10 @@ const Playlist: React.FC = () => {
                     {tracks.map((track, index) => (
                         <tr
                             key={index}
-                            className="cursor-pointer hover:bg-black"
+                            className="cursor-pointer hover:bg-black transition duration-300"
                             onClick={() => handleTrackClick(index)}  // Play or pause the clicked track
                         >
-                            <td className="py-2 flex justify-between items-center">
+                            <td className="py-2 flex justify-between items-center px-3">
                                 <span>{track.title}</span>
                                 {currentTrackIndex === index && isPlaying ? (
                                     <FaPause className="text-white" /> // Pause icon when the track is playing
