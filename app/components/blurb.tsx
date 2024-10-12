@@ -1,11 +1,11 @@
 // components/Blurb.tsx
 
 import React from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData }  from 'next/image';
 import Link from 'next/link';
 
 interface BlurbProps {
-    imageSrc: string;
+    imageSrc: string | StaticImageData;
     title: string;
     readMoreLink: string;
 }
