@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FiMenu, FiX } from 'react-icons/fi';
 import Image from 'next/image';
 import Logo from '../../public/images/logo/Logo.png'
+import LogoSVG from '../../public/svg/Logo-white.svg'
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,27 +13,29 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-black to-purple-700 text-white w-full fixed top-0 left-0 z-50 shadow-md">
-      <div className="container mx-auto flex justify-between items-center py-4 px-6">
+    <nav className="navbar text-white w-full fixed top-0 left-0 z-50">
+      <div className="container mx-auto flex justify-between py-4 px-6">
         <div className="">
-          <Image src={Logo} alt="Logo" layout="responsive" width={100} height={100} />
+          <Image src={LogoSVG} alt="Logo" layout="responsive" width={100} height={100} />
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu}>
             {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
         </div>
-        <ul className="hidden md:flex space-x-8">
-          <li className="hover:text-gray-300 cursor-pointer">
-            <Link href="/">Home</Link>
-          </li>
-          <li className="hover:text-gray-300 cursor-pointer">
-            <Link href="/about">About</Link>
-          </li>
-          <li className="hover:text-gray-300 cursor-pointer">
-            <Link href="/contact">Contact</Link>
-          </li>
-        </ul>
+        
+          <ul className="hidden md:flex space-x-8">
+            <li className="hover:text-gray-300 cursor-pointer">
+              <Link href="/">Home</Link>
+            </li>
+            <li className="hover:text-gray-300 cursor-pointer">
+              <Link href="/about">About</Link>
+            </li>
+            <li className="hover:text-gray-300 cursor-pointer">
+              <Link href="/contact">Contact</Link>
+            </li>
+          </ul>
+        
       </div>
 
       {/* Full-width side cart for mobile menu */}

@@ -16,13 +16,13 @@ const Playlist: React.FC = () => {
 
     return (
         <div className="container mx-auto my-4 p-4">
-            <h2 className="text-2xl font-bold mb-4">Playlist</h2>
+            <h2 className="text-2xl font-bold mb-4 text-white">Playlist</h2>
             <table className="min-w-full table-auto text-white">
                 <tbody>
                     {tracks.map((track, index) => (
                         <tr
                             key={index}
-                            className="cursor-pointer hover:bg-purple-500"
+                            className="cursor-pointer hover:bg-black"
                             onClick={() => handleTrackClick(index)}  // Play or pause the clicked track
                         >
                             <td className="py-2 flex justify-between items-center">

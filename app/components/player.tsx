@@ -39,7 +39,7 @@ const Player: React.FC = () => {
     };
 
     return (
-        <div className="fixed bottom-0 left-0 w-full bg-gradient-to-r from-black to-purple-700 text-white flex justify-center items-center py-4 px-6 shadow-lg z-50">
+        <div className="player fixed bottom-0 left-0 w-full text-white flex justify-center items-center py-4 px-6 z-50">
             {tracks.length > 0 && (
                 <>
                     <div className="flex items-center space-x-4">
@@ -62,7 +62,7 @@ const Player: React.FC = () => {
                             onClick={handleProgressClick} // Handle click on the progress bar
                         >
                             <div
-                                className="bg-blue-500 h-1 rounded"
+                                className="bg-black h-1 rounded"
                                 style={{ width: `${(progress / duration) * 100}%` }}
                             />
                         </div>
