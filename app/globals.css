@@ -39,6 +39,11 @@ body {
   box-shadow: 0 0 50px rgba(0,0,0,0.9);
 }
 
+.mobile-navbar {
+  background-color: #222020;
+  /* box-shadow: 0 0 50px rgba(0,0,0,0.9); */
+}
+
 .logo-container {
   width: 100px;
 }
@@ -46,4 +51,12 @@ body {
 .player {
   background-color: #222020;
   box-shadow: 0 0 50px rgba(0,0,0,0.4);
+}
+
+.container {
+  width: 1730px;
+}
+
+.random {
+background-color: #201f1f;
 }

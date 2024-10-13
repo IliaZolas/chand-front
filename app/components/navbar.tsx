@@ -28,17 +28,23 @@ const Navbar: React.FC = () => {
               <Link href="/">Home</Link>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              <Link href="/about">About</Link>
+              <Link href="/stream">Stream</Link>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              <Link href="/contact">Contact</Link>
+              <Link href="https://www.shopify.com/" target="_blank">Merch</Link>
+            </li>
+            <li className="hover:text-gray-300 cursor-pointer">
+              <Link href="/social">Social</Link>
+            </li>
+            <li className="hover:text-gray-300 cursor-pointer">
+              <Link href="https://discord.gg/JS6MrbKw" target="_blank">Discord</Link>
             </li>
           </ul>
       </div>
 
       {/* Full-width side cart for mobile menu */}
       <div
-        className={`fixed inset-0 bg-gradient-to-r from-black to-purple-700 text-white z-40 transform ${
+        className={`fixed mobile-navbar inset-0 text-white z-40 transform ${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
         } transition-transform duration-300 ease-in-out md:hidden`}
       >
@@ -55,10 +61,16 @@ const Navbar: React.FC = () => {
             <Link href="/">Home</Link>
           </li>
           <li onClick={toggleMenu} className="text-2xl hover:text-gray-300">
-            <Link href="/about">About</Link>
+          <Link href="/stream">Stream</Link>
           </li>
           <li onClick={toggleMenu} className="text-2xl hover:text-gray-300">
-          <Link href="/contact">Contact</Link>
+          <Link href="https://www.shopify.com/" target="_blank">Merch</Link>
+          </li>
+          <li onClick={toggleMenu} className="text-2xl hover:text-gray-300">
+          <Link href="/social">Social</Link>
+          </li>
+          <li onClick={toggleMenu} className="text-2xl hover:text-gray-300">
+          <Link href="https://discord.gg/JS6MrbKw">Discord</Link>
           </li>
         </ul>
       </div>
