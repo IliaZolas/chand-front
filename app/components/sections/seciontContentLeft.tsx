@@ -30,7 +30,7 @@ const SectionContentLeft: React.FC<SectionContentLeftProps> = ({
         className="w-full"
         style={{ backgroundColor: backgroundColor }}
         >
-        <div className="container mx-auto flex justify-around flex-col md:flex-row items-center py-24 text-white">
+        <div className="container mx-auto flex justify-around flex-col md:flex-row items-center py-24 px-4 text-white">
             {/* Image Column */}
             <div className="md:w-1/2 w-full">
             <Image

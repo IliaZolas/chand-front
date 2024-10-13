@@ -30,7 +30,7 @@ const SectionContentRight: React.FC<SectionContentRightProps> = ({
         className="w-full"
         style={{ backgroundColor: backgroundColor }}
     >
-        <div className="container mx-auto flex flex-col md:flex-row items-center py-24 text-white">
+        <div className="container mx-auto flex flex-col md:flex-row items-center py-24 text-white px-4">
         {/* Content Column */}
         <div className="md:w-1/2 w-full md:pr-8">
             <h2 className="text-3xl font-bold mb-4">{title}</h2>

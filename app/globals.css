@@ -54,7 +54,7 @@ body {
 }
 
 .container {
-  width: 1730px;
+  max-width: 2000px;
 }
 
 .random {

@@ -9,8 +9,8 @@ import Test4 from '../../../public/images/group-shots/test4.png';
 
 const SectionBlurb: React.FC = () => {
     return (
-    <section className="py-10">
-        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="py-10 px-4">
+        <div className="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <Blurb 
             imageSrc={Test1} 
             title="SHOWS" 

@@ -14,7 +14,7 @@ const SectionContentCenter: React.FC<SectionContentCenterProps> = ({
     text,
     }) => {
     return (
-    <section className="py-20 bg-transparent">
+    <section className="py-20 bg-transparent px-4">
         <div className="container mx-auto text-center">
         <h1 className="text-4xl font-bold text-white mb-4">{title}</h1>
         {subtitle && (
