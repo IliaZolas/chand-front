@@ -28,13 +28,7 @@ const Navbar: React.FC = () => {
               <Link href="/">Home</Link>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
-              <Link href="/stream">Stream</Link>
-            </li>
-            <li className="hover:text-gray-300 cursor-pointer">
               <Link href="https://www.shopify.com/" target="_blank">Merch</Link>
-            </li>
-            <li className="hover:text-gray-300 cursor-pointer">
-              <Link href="/social">Social</Link>
             </li>
             <li className="hover:text-gray-300 cursor-pointer">
               <Link href="https://discord.gg/JS6MrbKw" target="_blank">Discord</Link>

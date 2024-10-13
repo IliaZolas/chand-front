@@ -16,6 +16,9 @@ import SectionContentRight from "./components/sections/sectionContentRight";
 import SectionContentCenter from "./components/sections/sectionContentCenter";
 import SectionContact from "./components/sections/sectionContact";
 import SectionBlurb from './components/sections/sectionBlurb';
+import SectionSocialMedia from './components/sections/sectionSocial';
+import SectionStreaming from './components/sections/sectionStream';
+
 
 const Home: React.FC = () => {
 
@@ -24,12 +27,18 @@ const Home: React.FC = () => {
       <div className='container'>
         <Hero />
         <div className="py-8">
+          <SectionStreaming />
+          <SectionSocialMedia />
           <SectionContentCenter 
             title={'Burn The Past'}
             subtitle={'Defy the future'}
             text={'Chandigarh is a punk band that embodies raw expression and unbridled defiance, channeling their energy into music that challenges the status quo. With a flair for dark humor, they navigate the murky waters of moral quandaries, delving deep into themes of life and death. Their sound is a rebellious anthem, echoing the complexities of existence while provoking thought and stirring the soul.'}        
             />
-          <Playlist />
+            <div className='flex justify-around'>
+              <div style={{width: "800px", margin: "auto 0"}}>
+                <Playlist />
+              </div>
+            </div>
           <SectionContentLeft 
             imageSrc={Test2} 
             title={'Raphaël'} 
