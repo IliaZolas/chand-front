@@ -18,6 +18,7 @@ import SectionContact from "./components/sections/sectionContact";
 import SectionBlurb from './components/sections/sectionBlurb';
 import SectionSocialMedia from './components/sections/sectionSocial';
 import SectionStreaming from './components/sections/sectionStream';
+import SectionShows from './components/sections/sectionShows';
 
 
 const Home: React.FC = () => {
@@ -37,6 +38,7 @@ const Home: React.FC = () => {
             <div className='flex justify-around'>
               <div style={{width: "800px", margin: "auto 0"}}>
                 <Playlist />
+                <SectionShows />
               </div>
             </div>
           <SectionContentLeft 
