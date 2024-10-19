@@ -40,7 +40,11 @@ const GlitchEffect: React.FC = () => {
           const delay = averageTimePerChar * randomFactor;
           gsap.delayedCall(delay, removeRandomChar);
         } else {
+          // Reset text and restart glitch effect
+          currentText = originalText.split('');
+          element.innerHTML = originalText;
           clearInterval(fontSizeInterval);
+          gsap.delayedCall(1, runGlitchEffect); // Delay before restarting
         }
       };
 

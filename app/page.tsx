@@ -36,7 +36,7 @@ const Home: React.FC = () => {
           <SectionContentCenter 
             title={'Burn The Past'}
             subtitle={'Defy the future'}
-            text={'Our music is a unique fusion of punk rock and stoner, sprinkled with oriental influences, reflecting the city of Chandigarh, where the order of Swiss design meets the living chaos of India. As a band, we embody raw expression and unbridled defiance, channeling our energy into music that challenges the status quo. With a flair for dark humor, we navigate the murky waters of moral quandaries, delving deep into themes of life and death. Our rebellious sound echoes the complexities of existence, provoking thought, stirring the soul, and pushing the boundaries of conventional music.'}        
+            text={'A unique fusion of punk rock and stoner rock, sprinkled with oriental influences, reflecting the city of Chandigarh, where the order of Swiss design meets the living chaos of India, pushing the boundaries of conventional music.'}        
             />
             <div className='flex justify-around'>
               <div style={{width: "800px", margin: "auto 0"}}>
