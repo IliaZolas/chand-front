@@ -5,7 +5,7 @@ import "./globals.css";
 import Navbar from "./components/navbar";
 import Player from "./components/player";
 import LoadingSpinner from "./components/loadingSpinner";
-import { MusicPlayerProvider } from './components/musicPlayerContext';
+import { MusicPlayerProvider } from "./components/musicPlayerContext";
 
 export default function RootLayout({
   children,
@@ -17,7 +17,7 @@ export default function RootLayout({
   useEffect(() => {
     const handlePageLoad = () => {
       console.log("Page fully loaded");
-      setIsLoading(false);
+      setIsLoading(false); // Start fade-out of the spinner
     };
 
     // Check if the document is already fully loaded
@@ -37,15 +37,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="relative">
+        {/* Content Wrapper: faded out while loading */}
+        <div
+          className={`relative transition-opacity duration-1000 ${
+            isLoading ? "opacity-0" : "opacity-100"
+          }`}
+        >
           <MusicPlayerProvider>
             <Navbar />
             {children}
             <Player />
           </MusicPlayerProvider>
+        </div>
 
-          {/* Render the spinner when loading */}
-          {isLoading && <LoadingSpinner />}
+        {/* Loading Spinner */}
+        <div
+          className={`fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black z-50 transition-opacity duration-1000 ${
+            isLoading ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ pointerEvents: isLoading ? "auto" : "none" }}
+        >
+          <LoadingSpinner />
         </div>
       </body>
     </html>

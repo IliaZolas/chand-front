@@ -59,7 +59,7 @@ const GlitchEffect: React.FC = () => {
   }, []);
 
   return (
-    <div className="htg-glitch" style={{ textAlign: 'center', marginTop: '50px', fontSize:'75px', fontFamily: 'Earthen Parasite', color: "white" }}>
+    <div className="htg-glitch" style={{ textAlign: 'center', marginTop: '50px', fontSize:'75px', fontFamily: 'Earthen Parasite', color: "white", textShadow: "0 0 15px rgba(0,0,0,0.5)" }}>
       CHANDIGARH
     </div>
   );
