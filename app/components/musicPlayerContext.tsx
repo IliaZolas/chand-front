@@ -31,13 +31,15 @@ export const useMusicPlayer = () => {
 
 export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [tracks] = useState<Track[]>([
-        { title: 'Heal Me', url: '/audio/LANDR-01-Chan-Heal-Me-Open-High.mp3' },
-        { title: 'Get Me Out', url: '/audio/LANDR-02-Chan-get-me-out-Open-High.mp3' },
-        { title: 'Untouchable Blood', url: '/audio/LANDR-03-Chan-Untouchable-Blood-Open-High.mp3' },
-        { title: 'The Ghost I have Become', url: '/audio/LANDR-04-Chan-Dont-want-you-to-die-Balanced-Medium.mp3' },
-        { title: 'Second Wave', url: '/audio/LANDR-06-Chan-Second-Wave-Open-High.mp3' },
-        { title: 'The End of Time', url: '/audio/LANDR-07-Chan-End-of-time-Open-High.mp3' },
-        { title: 'The Neighbours', url: '/audio/LANDR-08-Chan-The-neighbours-Open-Medium.mp3' },
+        { title: 'Heal Me (Studio)', url: '/audio/LANDR-HealMe-Distro-Open-Medium.wav' },
+        { title: 'Get Me Out (Studio)', url: '/audio/LANDR-GetMeOut-Distro-2024-Balanced-Low.wav' },
+        // { title: 'Heal Me (Live)', url: '/audio/LANDR-01-Chan-Heal-Me-Open-High.mp3' },
+        // { title: 'Get Me Out (Live)', url: '/audio/LANDR-02-Chan-get-me-out-Open-High.mp3' },
+        { title: 'Untouchable Blood (Live)', url: '/audio/LANDR-03-Chan-Untouchable-Blood-Open-High.mp3' },
+        { title: 'The Ghost I have Become (Live)', url: '/audio/LANDR-04-Chan-Dont-want-you-to-die-Balanced-Medium.mp3' },
+        { title: 'Second Wave (Live)', url: '/audio/LANDR-06-Chan-Second-Wave-Open-High.mp3' },
+        { title: 'The End of Time (Live)', url: '/audio/LANDR-07-Chan-End-of-time-Open-High.mp3' },
+        { title: 'The Neighbours (Live)', url: '/audio/LANDR-08-Chan-The-neighbours-Open-Medium.mp3' },
     ]);
 
     const [currentTrackIndex, setCurrentTrackIndex] = useState<number>(0);

@@ -20,7 +20,7 @@ const SectionContentCenter: React.FC<SectionContentCenterProps> = ({
         {subtitle && (
             <h2 className="text-2xl font-medium text-white mb-6">{subtitle}</h2>
         )}
-        <p className="text-lg text-white max-w-2xl mx-auto">{text}</p>
+        <p className="text-white max-w-2xl mx-auto">{text}</p>
         </div>
     </section>
     );

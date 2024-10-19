@@ -8,9 +8,10 @@ interface BlurbProps {
     imageSrc: string | StaticImageData;
     title: string;
     readMoreLink: string;
+    comingSoon?: boolean;
 }
 
-const Blurb: React.FC<BlurbProps> = ({ imageSrc, title, readMoreLink }) => {
+const Blurb: React.FC<BlurbProps> = ({ imageSrc, title, readMoreLink, comingSoon }) => {
     return (
     <div className="blurb-component max-w-sm mx-auto">
         <div className="image-container">
@@ -25,9 +26,15 @@ const Blurb: React.FC<BlurbProps> = ({ imageSrc, title, readMoreLink }) => {
         />
         </div>
         <h2 className="blurb-title text-white text-xl font-semibold mt-4">{title}</h2>
-        <Link className="blurb-read-more text-white hover:underline mt-2 inline-block" href={readMoreLink}>
-            Read More
-        </Link>
+        <div className="mt-2">
+                {comingSoon ? (
+                    <span className="blurb-read-more text-white hover:underline inline-block">Coming Soon</span>  // Show "Coming Soon"
+                ) : (
+                    <Link className="blurb-read-more text-white hover:underline inline-block" href={readMoreLink}>
+                        Read More
+                    </Link>
+                )}
+            </div>
     </div>
     );
 };

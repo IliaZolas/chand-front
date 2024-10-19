@@ -1,0 +1,62 @@
+/* public/fonts/styles.css */
+
+/* Amatic SC */
+
+@font-face {
+    font-family: 'Amatic SC';
+    src: url('./amatic_sc/AmaticSC-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amatic SC';
+    src: url('./amatic_sc/AmaticSC-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* 215000 Euros */
+
+@font-face {
+    font-family: '215000 Euros';
+    src: url('./215000euro/215000E.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Who asks satan */
+
+@font-face {
+    font-family: 'Who Asks Satan';
+    src: url('./who_asks_satan/who-asks-satan.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* mb_think_twice */
+
+@font-face {
+    font-family: 'Think Twice';
+    src: url('./mb_think_twice/MB-ThinkTwice_Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* face your fears */
+
+@font-face {
+    font-family: 'Face Your Fears';
+    src: url('./face_your_fears/DK-Face-Your-Fears.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* earthen_parasite */
+
+@font-face {
+    font-family: 'Earthen Parasite';
+    src: url('./earthen_parasite/Earthen-Parasite-DEMO.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

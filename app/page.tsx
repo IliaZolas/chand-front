@@ -19,6 +19,8 @@ import SectionBlurb from './components/sections/sectionBlurb';
 import SectionSocialMedia from './components/sections/sectionSocial';
 import SectionStreaming from './components/sections/sectionStream';
 import SectionShows from './components/sections/sectionShows';
+import GlitchEffect from './components/GlitchEffect';
+import Footer from './components/footer';
 
 
 const Home: React.FC = () => {
@@ -27,21 +29,22 @@ const Home: React.FC = () => {
     <div className='flex justify-around'>
       <div className='container'>
         <Hero />
+        {/* <GlitchEffect /> */}
         <div className="py-8">
           <SectionStreaming />
           <SectionSocialMedia />
           <SectionContentCenter 
             title={'Burn The Past'}
             subtitle={'Defy the future'}
-            text={'Chandigarh is a punk band that embodies raw expression and unbridled defiance, channeling their energy into music that challenges the status quo. With a flair for dark humor, they navigate the murky waters of moral quandaries, delving deep into themes of life and death. Their sound is a rebellious anthem, echoing the complexities of existence while provoking thought and stirring the soul.'}        
+            text={'Our music is a unique fusion of punk rock and stoner, sprinkled with oriental influences, reflecting the city of Chandigarh, where the order of Swiss design meets the living chaos of India. As a band, we embody raw expression and unbridled defiance, channeling our energy into music that challenges the status quo. With a flair for dark humor, we navigate the murky waters of moral quandaries, delving deep into themes of life and death. Our rebellious sound echoes the complexities of existence, provoking thought, stirring the soul, and pushing the boundaries of conventional music.'}        
             />
             <div className='flex justify-around'>
               <div style={{width: "800px", margin: "auto 0"}}>
                 <Playlist />
-                <SectionShows />
+                {/* <SectionShows /> */}
               </div>
             </div>
-          <SectionContentLeft 
+          {/* <SectionContentLeft 
             imageSrc={Test2} 
             title={'Raphaël'} 
             subtitle={'Lead Guitar & Backup Vocals'}
@@ -69,12 +72,13 @@ const Home: React.FC = () => {
             subtitle={'Main Vocals & Guitar 2'}
             text={'Ilia is the voice that sets the rebellion in motion. Armed with a guitar and vocals that tear through the noise, they lead the charge. Ilia’s raspy, raw power resonates with the chaos of the world, channeling the angst, frustration, and raw energy that punk has always thrived on.'} 
             backgroundColor='#222020'       
-            />
+            /> */}
             <SectionBlurb />
         </div>
-        <SectionContact
+        {/* <SectionContact
           backgroundColor='#272525'
-        />
+        /> */}
+        <Footer />
       </div>
     </div>
   );

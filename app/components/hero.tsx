@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import HeroImage from '../../public/images/group-shots/test5.png'
+import GlitchEffect from './GlitchEffect';
+import HeroImage from '../../public/images/group-shots/header.png'
 
 const Hero: React.FC = () => {
     return (
@@ -11,6 +12,9 @@ const Hero: React.FC = () => {
                 width={2000} 
                 height={100} 
             />
+            <div className="absolute t-5">
+                <GlitchEffect />
+            </div>
         </div>
     );
 };

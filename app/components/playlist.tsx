@@ -26,7 +26,7 @@ const Playlist: React.FC = () => {
                             onClick={() => handleTrackClick(index)}  // Play or pause the clicked track
                         >
                             <td className="py-2 flex justify-between items-center px-3">
-                                <span>{track.title}</span>
+                                <p>{track.title}</p>
                                 {currentTrackIndex === index && isPlaying ? (
                                     <FaPause className="text-white" /> // Pause icon when the track is playing
                                 ) : (
