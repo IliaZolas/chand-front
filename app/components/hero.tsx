@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import GlitchEffect from './GlitchEffect';
-import HeroImage from '../../public/images/mandalas/mandala-2.png';
+import HeroImage from '../../public/images/group-shots/test1.png';
 import { FaChevronDown } from 'react-icons/fa';
 
 const Hero: React.FC = () => {

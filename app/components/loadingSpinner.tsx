@@ -34,16 +34,23 @@ const LoadingSpinner: React.FC = () => {
 
     const observer = trackPerformance();
 
-    window.addEventListener('load', () => {
-      setLoadingProgress(100); // Ensure progress reaches 100%
-      setTimeout(() => {
-        setFadeOut(true); // Start fade-out animation
-      }, 500);
-    });
+    // Check if the page is already loaded to ensure we don't miss the event
+    if (document.readyState === 'complete') {
+      setLoadingProgress(100);
+      setFadeOut(true);
+    } else {
+      // Track page load completion to set progress to 100%
+      const handleLoad = () => {
+        setLoadingProgress(100);
+        setFadeOut(true);
+      };
+      window.addEventListener('load', handleLoad);
 
-    return () => {
-      observer.disconnect();
-    };
+      return () => {
+        observer.disconnect();
+        window.removeEventListener('load', handleLoad);
+      };
+    }
   }, []);
 
   return (
