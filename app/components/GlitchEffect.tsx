@@ -7,27 +7,33 @@ const GlitchEffect: React.FC = () => {
       const element = document.querySelector('.htg-glitch') as HTMLElement;
       if (!element) return;
 
-      const originalText = element.textContent || '';
+      const originalText = 'CHANDIGARH';
       let currentText = originalText.split('');
       const totalDuration = 1.5;
 
       const getFontSizes = (): string[] => {
         const width = window.innerWidth;
-        return width >= 992 ? ['3.98vw', '3.99vw', '4vw', '4.01vw', '4.02vw'] : ['5.48vw', '5.49vw', '5.5vw', '5.51vw', '5.52vw'];
+        return width >= 992
+          ? ['3.98vw', '3.99vw', '4vw', '4.01vw', '4.02vw']
+          : ['5.48vw', '5.49vw', '5.5vw', '5.51vw', '5.52vw'];
       };
 
       let fontSizes = getFontSizes();
       let fontSizeInterval: NodeJS.Timeout;
 
+      // Function to change font size randomly
       const changeFontSize = () => {
         element.style.fontSize = fontSizes[Math.floor(Math.random() * fontSizes.length)];
       };
 
+      // Start the font size changing effect
       fontSizeInterval = setInterval(changeFontSize, 10);
 
+      // Function to remove random characters from the text
       const removeRandomChar = () => {
-        if (currentText.some(char => char !== '\u00A0')) {
+        if (currentText.some((char) => char !== '\u00A0')) {
           let randomIndex: number;
+
           do {
             randomIndex = Math.floor(Math.random() * currentText.length);
           } while (currentText[randomIndex] === '\u00A0');
@@ -40,11 +46,15 @@ const GlitchEffect: React.FC = () => {
           const delay = averageTimePerChar * randomFactor;
           gsap.delayedCall(delay, removeRandomChar);
         } else {
-          // Reset text and restart glitch effect
-          currentText = originalText.split('');
-          element.innerHTML = originalText;
+          // Reset text to original and restart glitch effect
           clearInterval(fontSizeInterval);
-          gsap.delayedCall(1, runGlitchEffect); // Delay before restarting
+          element.innerHTML = originalText;
+
+          // Wait for 1 second before restarting the glitch effect
+          gsap.delayedCall(1, () => {
+            currentText = originalText.split('');
+            runGlitchEffect();
+          });
         }
       };
 
@@ -59,7 +69,17 @@ const GlitchEffect: React.FC = () => {
   }, []);
 
   return (
-    <div className="htg-glitch" style={{ textAlign: 'center', marginTop: '50px', fontSize:'75px', fontFamily: 'Earthen Parasite', color: "white", textShadow: "0 0 15px rgba(0,0,0,0.5)" }}>
+    <div
+      className="htg-glitch"
+      style={{
+        textAlign: 'center',
+        marginTop: '50px',
+        fontSize: '75px',
+        fontFamily: 'Earthen Parasite',
+        color: 'white',
+        textShadow: '0 0 15px rgba(0,0,0,0.5)',
+      }}
+    >
       CHANDIGARH
     </div>
   );

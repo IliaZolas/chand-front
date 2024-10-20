@@ -2,55 +2,31 @@ import React, { useState, useEffect } from 'react';
 import GlitchEffect from './GlitchEffect';
 
 const LoadingSpinner: React.FC = () => {
-  const [loadingProgress, setLoadingProgress] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);
+  const [dots, setDots] = useState('.'); // Start with one dot for an immediate effect
 
   useEffect(() => {
-    let total = 0;
-    let loaded = 0;
+    // Interval to update dots for blinking effect
+    const dotsInterval = setInterval(() => {
+      setDots((prev) => (prev.length < 3 ? prev + '.' : '.')); // Add a dot, reset after 3
+    }, 250);
 
-    const updateLoadingProgress = () => {
-      const progress = Math.min(Math.round((loaded / total) * 100), 100);
-      setLoadingProgress(progress);
-    };
-
-    const trackPerformance = () => {
-      const observer = new PerformanceObserver((list) => {
-        const entries = list.getEntriesByType('resource') as PerformanceResourceTiming[];
-        total = entries.length;
-
-        entries.forEach((entry) => {
-          if (entry.responseEnd) {
-            loaded += 1;
-            updateLoadingProgress();
-          }
-        });
-      });
-
-      observer.observe({ entryTypes: ['resource'] });
-
-      return observer;
-    };
-
-    const observer = trackPerformance();
-
-    // Check if the page is already loaded to ensure we don't miss the event
-    if (document.readyState === 'complete') {
-      setLoadingProgress(100);
-      setFadeOut(true);
-    } else {
-      // Track page load completion to set progress to 100%
-      const handleLoad = () => {
-        setLoadingProgress(100);
+    const handlePageLoad = () => {
+      setTimeout(() => {
         setFadeOut(true);
-      };
-      window.addEventListener('load', handleLoad);
+      }, 500); // Delay fade out to allow the loading indicator to be visible briefly
+    };
 
-      return () => {
-        observer.disconnect();
-        window.removeEventListener('load', handleLoad);
-      };
+    // Check if the page is already loaded
+    if (document.readyState === 'complete') {
+      handlePageLoad();
+    } else {
+      window.addEventListener('load', handlePageLoad);
     }
+
+    return () => {
+      clearInterval(dotsInterval);
+    };
   }, []);
 
   return (
@@ -61,7 +37,7 @@ const LoadingSpinner: React.FC = () => {
       style={{ visibility: fadeOut ? 'hidden' : 'visible' }}
     >
       <div className="text-white text-4xl mb-4">
-        Loading {loadingProgress}%
+        Loading{dots}
       </div>
       <GlitchEffect />
     </div>
