@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
             playsInline // Ensures the video plays smoothly on mobile browsers
             >
             <source 
-                src="/video/video-test.mp4" 
+                src="https://res.cloudinary.com/dsttos37f/video/upload/v1732466220/Chandigarh/video-test_op6dqo.mp4" 
                 type="video/mp4" 
                 />
             Your browser does not support the video tag.
