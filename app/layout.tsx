@@ -37,20 +37,21 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body>
-      <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-LLFDEPEWXV`}
-          strategy="afterInteractive"
-        />
+      <head>
+        <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=G-LLFDEPEWXV`}
+            strategy="afterInteractive"
+          />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            function gtag(){window.dataLayer.push(arguments);}
             gtag('js', new Date());
-
-            gtag('config', 'G-LLFDEPEWXV');
+            gtag('config', 'G-XXXXXXX');
           `}
         </Script>
+      </head>
+      <body>
         {/* Content Wrapper: faded out while loading */}
         <div
           className={`relative transition-opacity duration-1000 ${
