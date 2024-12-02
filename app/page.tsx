@@ -22,7 +22,6 @@ import SectionShows from './components/sections/sectionShows';
 import GlitchEffect from './components/GlitchEffect';
 import Footer from './components/footer';
 
-
 const Home: React.FC = () => {
 
   return (
