@@ -31,15 +31,15 @@ export const useMusicPlayer = () => {
 
 export const MusicPlayerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [tracks] = useState<Track[]>([
-        { title: 'Heal Me (Studio)', url: '/audio/LANDR-HealMe-Distro-Open-Medium.wav' },
-        { title: 'Get Me Out (Studio)', url: '/audio/LANDR-GetMeOut-Distro-2024-Balanced-Low.wav' },
+        { title: 'Heal Me (Studio)', url: 'https://res.cloudinary.com/dsttos37f/video/upload/v1733157362/Chandigarh/LANDR-HealMe-Distro-Open-Medium_xlvbab.wav' },
+        { title: 'Get Me Out (Studio)', url: 'https://res.cloudinary.com/dsttos37f/video/upload/v1733157356/Chandigarh/LANDR-GetMeOut-Distro-2024-Balanced-Low_deuuss.wav' },
         // { title: 'Heal Me (Live)', url: '/audio/LANDR-01-Chan-Heal-Me-Open-High.mp3' },
         // { title: 'Get Me Out (Live)', url: '/audio/LANDR-02-Chan-get-me-out-Open-High.mp3' },
-        { title: 'Untouchable Blood (Live)', url: '/audio/LANDR-03-Chan-Untouchable-Blood-Open-High.mp3' },
-        { title: 'The Ghost I have Become (Live)', url: '/audio/LANDR-04-Chan-Dont-want-you-to-die-Balanced-Medium.mp3' },
-        { title: 'Second Wave (Live)', url: '/audio/LANDR-06-Chan-Second-Wave-Open-High.mp3' },
-        { title: 'The End of Time (Live)', url: '/audio/LANDR-07-Chan-End-of-time-Open-High.mp3' },
-        { title: 'The Neighbours (Live)', url: '/audio/LANDR-08-Chan-The-neighbours-Open-Medium.mp3' },
+        { title: 'Untouchable Blood (Live)', url: 'https://res.cloudinary.com/dsttos37f/video/upload/v1733157348/Chandigarh/LANDR-03-Chan-Untouchable-Blood-Open-High_c78n8s.mp3' },
+        { title: 'The Ghost I have Become (Live)', url: 'https://res.cloudinary.com/dsttos37f/video/upload/v1733157349/Chandigarh/LANDR-04-Chan-Dont-want-you-to-die-Balanced-Medium_m55d0f.mp3' },
+        { title: 'Second Wave (Live)', url: 'https://res.cloudinary.com/dsttos37f/video/upload/v1733157348/Chandigarh/LANDR-06-Chan-Second-Wave-Open-High_xn8vb3.mp3' },
+        { title: 'The End of Time (Live)', url: 'https://res.cloudinary.com/dsttos37f/video/upload/v1733157352/Chandigarh/LANDR-07-Chan-End-of-time-Open-High_bebtnm.mp3' },
+        { title: 'The Neighbours (Live)', url: 'https://res.cloudinary.com/dsttos37f/video/upload/v1733157350/Chandigarh/LANDR-08-Chan-The-neighbours-Open-Medium_npun8n.mp3' },
     ]);
 
     const [currentTrackIndex, setCurrentTrackIndex] = useState<number>(0);
