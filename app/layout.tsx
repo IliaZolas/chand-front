@@ -13,27 +13,31 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const handlePageLoad = () => {
-      console.log("Page fully loaded");
-      setIsLoading(false); // Start fade-out of the spinner
-    };
+  // console.log('test')
 
-    // Check if the document is already fully loaded
-    if (document.readyState === "complete") {
-      handlePageLoad();
-    } else {
-      window.addEventListener("load", handlePageLoad);
-    }
+  // useEffect(() => {
+  //   const handlePageLoad = () => {
+  //     console.log("Page fully loaded");
+  //     setIsLoading(false); // Start fade-out of the spinner
+  //   };
 
-    return () => {
-      window.removeEventListener("load", handlePageLoad);
-    };
-  }, []);
+  //   // Check if the document is already fully loaded
+  //   if (document.readyState === "complete") {
+  //     handlePageLoad();
+  //   } else {
+  //     window.addEventListener("load", handlePageLoad);
+  //   }
 
-  console.log("isLoading", isLoading); // Debugging output to verify state change
+  //   return () => {
+  //     window.removeEventListener("load", handlePageLoad);
+  //   };
+  // }, []);
+
+  // console.log("isLoading", isLoading);
+
+  const isLoading = false;
 
   return (
     <html lang="en">
